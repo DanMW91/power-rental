@@ -4,15 +4,6 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <div class="field">
-      <%= f.label :first_name %><br />
-      <%= f.text_field :first_name, autofocus: true %>
-    </div>
-
-    <div class="field">
-      <%= f.label :last_name %><br />
-      <%= f.text_field :last_name %>
-    </div>
 
     <%= f.input :email,
                 required: true,
@@ -25,6 +16,9 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :first_name  %>
+    <%= f.input :last_name  %>
+    <%= f.input :location  %>
   </div>
 
 
