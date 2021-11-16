@@ -1,6 +1,18 @@
-<ul>
-  <% @powers.each do |power| %>
-    <li><%= power.name %> -- price: <%= power.price %> -- Location <%= power.location %></li>
-  <% end %>
-  <li></li>
-</ul>
+<div class="main-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "superheros.jpeg"%>')">
+  <h1>Superpower Rental</h1>
+</div>
+
+
+  <div class="cards-container">
+      <% @powers.each do |power| %>
+        <div class="card-product">
+          <img src="https://static.wikia.nocookie.net/marveldatabase/images/8/88/Fantastic_Four_Vol_6_1_Human_Torch_Variant_Textless.jpg" />
+          <div class="card-product-infos">
+            <h2><%= power.name %></h2>
+            <p ><%= power.location%></p>
+            <p class='m-3'><strong>- <%= power.price %></strong></p>
+          </div>
+        </div>
+      <% end %>
+
+  </div>
