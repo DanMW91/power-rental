@@ -11,7 +11,7 @@
   <%= @power.price %>
   <%= @power.example_hero %>
 </div>
-<% if !current_user == @power.user%>
+<% if current_user != @power.user%>
   <div>
     <%= simple_form_for [@power, @booking] do |f| %>
       <%= f.input :start_date, as: :date, html5: true %>
