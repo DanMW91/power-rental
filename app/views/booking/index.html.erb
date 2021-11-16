@@ -1,0 +1,7 @@
+<ul>
+<% @bookings.each do |booking| %>
+<li><%= booking.status %></li>
+<% power = Power.find(booking.power_id) %>
+<%= power.element %>
+<% end %>
+</ul>
