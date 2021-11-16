@@ -3,12 +3,21 @@
 <div class="container">
 
 <h1><%= @power.name %></h1>
+<div>
   <%= @power.description %>
   <%= @power.power_type %>
   <%= @power.element %>
   <%= @power.location %>
   <%= @power.price %>
   <%= @power.example_hero %>
-
-
 </div>
+<% if !current_user == @power.user%>
+  <div>
+    <%= simple_form_for [@power, @booking] do |f| %>
+      <%= f.input :start_date, as: :date, html5: true %>
+      <%= f.input :end_date, as: :date, html5: true %>
+      <%= f.hidden_field :status, value: "pending"  %>
+      <%= f.submit "Request Booking", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+<% end %>
