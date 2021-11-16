@@ -8,8 +8,23 @@ class PowersController < ApplicationController
   end
 
   def create
-    # power = Power.new(power_params)
-    # current_user.id
+    @power = Power.new(power_params)
+    @power.user = current_user
+    if @power.save!
+      redirect_to power_path(@power)
+    else
+      render :new
+    end
+
+    # @power = Power.new(power_params)
+    # if @power.save!
+    #   redirect_to power_path(@power)
+    # else
+    #   render :new
+    # end
+  end
+
+  def show
   end
 
   def destroy
@@ -24,7 +39,7 @@ class PowersController < ApplicationController
   private
 
   def power_params
-    # params.require(:power).permit(:name, :element, :power_type, :price, :location, :example_hero)
+    params.require(:power).permit(:name, :element, :power_type, :price, :location, :example_hero)
   end
 
 end
