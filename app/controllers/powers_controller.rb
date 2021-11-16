@@ -10,6 +10,7 @@ class PowersController < ApplicationController
   def create
     @power = Power.new(power_params)
     @power.user = current_user
+
     if @power.save!
       redirect_to power_path(@power)
     else
@@ -23,6 +24,7 @@ class PowersController < ApplicationController
     #   render :new
     # end
   end
+
 
   def show
     @power = Power.find(params[:id])
