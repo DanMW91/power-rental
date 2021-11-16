@@ -1,0 +1,91 @@
+.cards-container {
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+  display: flex;
+  padding: 24px 0px;
+  justify-content: space-around;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.589);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.774);
+  transition: all .2s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+}
+
+
+.card-product {
+  position:relative;
+  margin-top: 40px;
+  overflow: hidden;
+  height: 350px;
+  width: 400px;
+  background: rgb(235, 235, 235);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.438);
+  display: flex;
+  align-items: center;
+  transition: all .2s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height:100%;
+}
+
+.card-product .card-del {
+  color: rgb(29, 29, 29);
+  background-color: rgb(243, 85, 85);
+  text-align: center;
+  vertical-align: middle;
+  line-height: 15px;
+
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+
+}

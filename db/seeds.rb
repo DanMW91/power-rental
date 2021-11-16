@@ -8,6 +8,11 @@
 User.destroy_all
 
 
-user1 = User.create(email: 'dan@gmail.com', password: '123123', first_name: 'Dan', last_name: 'Danson')
+user1 = User.create(email: 'dan@gmail.com', password: '123123', first_name: 'Dan', last_name: 'Danson', location: 'france')
 
-Power.create(user_id: user1.id, element: "fire", power_type: 'sorcery', price: 150, location: 'france', example_hero: 'human torch', name: 'pyromancer' )
+
+5.times do
+  Power.create(user_id: user1.id, element: "fire", power_type: 'sorcery', price: 150, location: 'france', example_hero: 'human torch', name: 'pyromancer' )
+  puts "creating power"
+end
+puts "creating power"
