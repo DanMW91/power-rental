@@ -1,2 +1,11 @@
 <h1>Powers#new</h1>
 <p>Find me in app/views/powers/new.html.erb</p>
+<%= simple_form_for(@power) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :element %>
+  <%= f.input :power_type %>
+  <%= f.input :price %>
+  <%= f.input :location %>
+  <%= f.input :example_hero %>
+  <%= f.submit %>
+<% end %>

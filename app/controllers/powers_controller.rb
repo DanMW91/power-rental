@@ -4,7 +4,7 @@ class PowersController < ApplicationController
   end
 
   def new
-    # @power = Power.new
+    @power = Power.new
   end
 
   def create
