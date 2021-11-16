@@ -10,6 +10,10 @@
             <p><%= power.description %></p>
             <p ><%= power.location%></p>
             <p class='m-3'><strong>- <%= power.price %></strong></p>
+            <div class="d-flex">
+              <%= link_to "edit", edit_power_path(power), class: "btn btn-danger" %>
+              <%= link_to "delete", power_path(power), method: :delete, class: "btn btn-danger ml-2" %>
+            </div>
           </div>
         </div>
       <% end %>
