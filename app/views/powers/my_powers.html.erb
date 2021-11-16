@@ -1,0 +1,18 @@
+<div class="container">
+<h2>Your Active Power Listings:</h2>
+  <div class="cards-container col-sm-6">
+    <% @powers.each do |power| %>
+      <%= link_to power_path(power), class: "card-link" do %>
+        <div class="card-product" >
+          <img src="https://static.wikia.nocookie.net/marveldatabase/images/8/88/Fantastic_Four_Vol_6_1_Human_Torch_Variant_Textless.jpg" />
+          <div class="card-product-infos">
+            <h2><%= power.name %></h2>
+            <p><%= power.description %></p>
+            <p ><%= power.location%></p>
+            <p class='m-3'><strong>- <%= power.price %></strong></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

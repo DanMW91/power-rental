@@ -16,7 +16,6 @@ class PowersController < ApplicationController
     else
       render :new
     end
-
     # @power = Power.new(power_params)
     # if @power.save!
     #   redirect_to power_path(@power)
@@ -25,6 +24,9 @@ class PowersController < ApplicationController
     # end
   end
 
+  def my_powers
+    @powers = current_user.powers
+  end
 
   def show
     @power = Power.find(params[:id])
