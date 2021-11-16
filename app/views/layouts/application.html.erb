@@ -37,7 +37,7 @@
           <%= link_to "Profile", "#", class: "dropdown-item" %>
           <%= link_to "Settings", "#", class: "dropdown-item" %>
           <%= link_to "Wishlist", "#", class: "dropdown-item" %>
-          <%= link_to "Logout", "#", class: "dropdown-item" %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         </div>
       </li>
     </ul>
