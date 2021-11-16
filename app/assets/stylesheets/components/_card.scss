@@ -18,9 +18,9 @@
   color: white;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.589);
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.774);
   transition: all .2s ease-in-out;
   &:hover {
     transform: scale(1.1);
@@ -35,7 +35,7 @@
   overflow: hidden;
   height: 350px;
   width: 400px;
-  background: white;
+  background: rgb(235, 235, 235);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.438);
   display: flex;
   align-items: center;
