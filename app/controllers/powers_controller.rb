@@ -30,6 +30,7 @@ class PowersController < ApplicationController
 
   def show
     @power = Power.find(params[:id])
+    @booking = Booking.new
   end
 
   def destroy
