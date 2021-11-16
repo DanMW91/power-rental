@@ -4,6 +4,7 @@
 <%= simple_form_for(@power) do |f| %>
   <%= f.input :name %>
   <%= f.input :element, :collection => %w[ Air Water Fire Electricity Earth] %>
+  <%= f.input :description %>
   <%= f.input :power_type %>
   <%= f.input :price %>
   <%= f.input :location %>
