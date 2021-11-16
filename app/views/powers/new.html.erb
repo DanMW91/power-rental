@@ -1,12 +1,13 @@
 <h1>Powers#new</h1>
 <p>Find me in app/views/powers/new.html.erb</p>
+
 <%= simple_form_for(@power) do |f| %>
   <%= f.input :name %>
+  <%= f.input :element, :collection => %w[Air Water Fire Electricity Earth] %>
   <%= f.input :description %>
-  <%= f.input :element %>
-  <%= f.input :power_type %>
+  <%= f.input :power_type, :collection => %w[Mental Flight Strength Transformation Transportation Darkness Healing Sorcery Otherworldly] %>
   <%= f.input :price %>
-  <%= f.input :location %>
+  <%= f.input :location, :collection => ["Metropolis", 'Gotham City', 'Atlantis', 'Wakanda', 'Symkaria', 'Star City', 'London'] %>
   <%= f.input :example_hero %>
-  <%= f.submit %>
+  <%= f.submit "Let's Go!", class: "btn btn-primary" %>
 <% end %>
