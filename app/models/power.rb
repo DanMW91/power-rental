@@ -4,7 +4,6 @@ class Power < ApplicationRecord
 
   validates :description, length: { maximum: 400 }
   validates :element, :power_type, :price, :location, :user_id, :name, :example_hero, presence: true
-  validates :element, inclusion: { in: %w[air water fire electricity earth] }
-  validates :power_type, inclusion: { in: %w[mental flight strength transformation transportation darkness healing sorcery] }
-
+  validates :element, inclusion: { in: %w[Air Water Fire Electricity Earth] }
+  validates :power_type, inclusion: { in: %w[Mental Flight Strength Transformation Transportation Darkness Healing Sorcery] }
 end

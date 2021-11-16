@@ -34,21 +34,27 @@ class PowersController < ApplicationController
   end
 
   def destroy
-
+    @power = Power.find(params[:id])
+    @power.destroy
+    redirect_to mypowers_path
   end
 
   def edit
-
+    @power = Power.find(params[:id])
   end
 
   def update
-
+    @power = Power.find(params[:id])
+    @power.update(power_params)
+    if @power.save!
+      redirect_to mypowers_path
+    end
   end
 
   private
 
   def power_params
-    params.require(:power).permit(:name, :element, :power_type, :price, :location, :example_hero)
+    params.require(:power).permit(:name, :element, :power_type, :description, :price, :location, :example_hero)
   end
 
 end

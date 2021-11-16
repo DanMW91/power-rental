@@ -1,5 +1,9 @@
 class BookingsController < ApplicationController
 
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
   def create
 
     @booking = Booking.new(booking_params)
@@ -8,6 +12,10 @@ class BookingsController < ApplicationController
     @booking.save
     redirect_to power_path(params[:power_id])
   end
+  
+  def index
+    @bookings = Booking.where(user_id: current_user.id)
+  end 
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :status)

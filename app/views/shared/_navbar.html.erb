@@ -1,9 +1,9 @@
 
 
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to "Home", root_path, class: "navbar-brand" %>
     <%= image_tag "" %>
-  <% end %>
+
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -34,7 +34,7 @@
           <%= link_to "Messages", "#", class: "dropdown-item" %>
           <%= link_to "My Powers", my_powers_path, class: "dropdown-item" %>
           <%= link_to "Profile", "#", class: "dropdown-item" %>
-          <%= link_to "Settings", "#", class: "dropdown-item" %>
+          <%= link_to "Bookings", my_bookings_path , class: "dropdown-item" %>
           <%= link_to "Wishlist", "#", class: "dropdown-item" %>
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           <% end %>
