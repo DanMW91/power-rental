@@ -22,9 +22,9 @@
         <% end %>
       <li class="nav-item">
       <% if user_signed_in? %>
-        <%= link_to "List Your Powers", new_power_path, class: "nav-link" %>
+        <%= link_to "List a Power", new_power_path, class: "nav-link" %>
       <% else %>
-        <%= link_to "List Your Powers", new_user_session_path, class: "nav-link" %>
+        <%= link_to "List a Power", new_user_session_path, class: "nav-link" %>
       <% end %>
     </li>
         <% if user_signed_in? %>
@@ -43,7 +43,7 @@
     </ul>
   </div>
 </div>
-    <ul class="list-inline tabs-underlined">
+    <%# <ul class="list-inline tabs-underlined">
   <li>
     <a href="#" class="tab-underlined active">Bookings</a>
   </li>
@@ -53,4 +53,4 @@
   <li>
     <a href="#" class="tab-underlined">Conversations</a>
   </li>
-</ul>
+</ul> %>
