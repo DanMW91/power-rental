@@ -21,7 +21,11 @@
       </li>
         <% end %>
       <li class="nav-item">
-      <%= link_to "List Your Powers", new_user_session_path, class: "nav-link" %>
+      <% if user_signed_in? %>
+        <%= link_to "List Your Powers", new_power_path, class: "nav-link" %>
+      <% else %>
+        <%= link_to "List Your Powers", new_user_session_path, class: "nav-link" %>
+      <% end %>
     </li>
         <% if user_signed_in? %>
       <li class="nav-item dropdown">

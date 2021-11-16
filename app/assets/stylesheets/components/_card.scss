@@ -89,3 +89,10 @@
   border-radius: 50%;
 
 }
+.card-link {
+  text-decoration: none;
+  color: rgb(24, 24, 24);
+    &:hover {
+      color: rgb(24, 24, 24);
+    }
+}
