@@ -25,3 +25,9 @@ user2 = User.create(email: 'test@test.com', password: 'test123', first_name: 'Je
   puts "creating power"
     Power.create!(user_id: user1.id, element: "Water", description: 'Go invisible, sneak about!', power_type: 'Sorcery', price: 150, location: 'germany', example_hero: 'Invisible Woman', name: 'Invisibility', image_url: 'https://i.pinimg.com/originals/1e/6a/3a/1e6a3ae186858c89bea11085b404b152.jpg'  )
   puts "creating power"
+   Power.create!(user_id: user2.id, element: "Air", description: 'Heal yourself from the brink of death. Stubbed toes will be a thing of the past!', power_type: 'Healing', price: 250, location: 'germany', example_hero: 'Wolverine', name: 'Healing Factor', image_url: 'https://static3.srcdn.com/wordpress/wp-content/uploads/2020/09/Wolverine-Bullet-Wounds.jpg'  )
+  puts "creating power"
+   Power.create!(user_id: user1.id, element: "Earth", description: 'Climb walls, leap from building to building!', power_type: 'Strength', price: 150, location: 'Africa', example_hero: 'Spiderman', name: 'Spider Abilities', image_url: 'https://www.ocregister.com/wp-content/uploads/2020/03/Comic-16x9-1-1.jpg'  )
+  puts "creating power"
+   Power.create!(user_id: user2.id, element: "Electricity", description: 'Shoot lightning from your hands!', power_type: 'Sorcery', price: 50, location: 'germany', example_hero: 'Static', name: 'Electricity', image_url: 'https://imgix-media.wbdndc.net/cms/filer_public/34/10/34100455-a86f-4107-9bdd-98b4addf5ecc/static-powers-staic_2_05_600-v1.jpg'  )
+  puts "creating power"
