@@ -13,6 +13,19 @@
 @import "pages/index";
 @import "components/form";
 
+html {
+  position: relative;
+}
+
+body {
+  min-height: 100;
+  overflow: scroll;
+}
+
+.main-container {
+  margin-bottom: 110px;
+  min-height: calc(100vh - 110px);
+}
 
 .navbar-lewagon {
   justify-content: space-between;
@@ -46,4 +59,35 @@
 .tabs-underlined .tab-underlined.active {
   opacity: 1;
   border-bottom: 3px solid #555555;
+}
+
+.footer {
+  background: linear-gradient(gold, rgb(255, 231, 93));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.3);
+  margin-bottom: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: black;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-heart {
+  color: #D23333;
 }

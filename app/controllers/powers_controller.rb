@@ -10,6 +10,8 @@ class PowersController < ApplicationController
   def create
     @power = Power.new(power_params)
     @power.user = current_user
+    keywords = []
+    keywords << @power.element
 
     if @power.save!
       redirect_to power_path(@power)
@@ -26,6 +28,13 @@ class PowersController < ApplicationController
 
   def my_powers
     @powers = current_user.powers
+    @active_bookings = []
+    @powers.each do |power|
+      power.bookings.each do |booking|
+        @active_bookings << booking
+      end
+    end
+
   end
 
   def show

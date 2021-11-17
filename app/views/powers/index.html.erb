@@ -1,4 +1,4 @@
-<div class="main-banner" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= image_path "superheros.jpeg"%>')">
+<div class="main-banner" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= image_path "superheros.jpg"%>')">
   <h1>Superpower Rental</h1>
   <h3>- Become the Hero You Were Always Meant to Be<h3>
   <div class="power-search">
@@ -14,12 +14,13 @@
       <% @powers.each do |power| %>
         <%= link_to power_path(power), class: "card-link" do %>
         <div class="card-product" >
-            <img src="https://static.wikia.nocookie.net/marveldatabase/images/8/88/Fantastic_Four_Vol_6_1_Human_Torch_Variant_Textless.jpg" />
+            <img src="<%=power.image_url%>" />
             <div class="card-product-infos">
               <h2><%= power.name %></h2>
               <p><%= power.description %></p>
               <p ><%= power.location%></p>
-              <p class='m-3'><strong>- <%= power.price %></strong></p>
+              <p>Listed by - <%= power.user.first_name  %> <%= power.user.last_name  %> </p>
+              <p class='m-3'><strong>Price: £<%= power.price %>/day</strong></p>
             </div>
           </div>
         <% end %>
