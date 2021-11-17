@@ -13,6 +13,6 @@ user1 = User.create(email: 'dan@gmail.com', password: '123123', first_name: 'Dan
 
 
 5.times do
-  Power.create(user_id: user1.id, element: "fire", description: 'It burns!', power_type: 'sorcery', price: 150, location: 'france', example_hero: 'human torch', name: 'pyromancer' )
+  Power.create!(user_id: user1.id, element: "Fire", description: 'It burns!', power_type: 'Sorcery', price: 150, location: 'france', example_hero: 'human torch', name: 'pyromancer' )
   puts "creating power"
 end
