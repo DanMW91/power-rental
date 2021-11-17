@@ -4,7 +4,7 @@ class PowersController < ApplicationController
       @powers = Power.where("name ILIKE ?", "%#{params[:query]}%")
     else
       @powers = Power.all
-    end  
+    end
   end
 
   def new
