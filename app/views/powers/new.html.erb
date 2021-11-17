@@ -15,9 +15,8 @@
         <%= f.input :price %>
         <%= f.input :location, :collection => ["Metropolis", 'Gotham City', 'Atlantis', 'Wakanda', 'Symkaria', 'Star City', 'London'] %>
         <%= f.input :example_hero %>
+
         <div class="col text-center"><%= f.submit "Let's Go!", class: "btn btn-primary" %></div>
-        <%= f.input :image_url %>
-        <%= f.submit "Let's Go!", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
