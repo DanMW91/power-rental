@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-6">
-    <br /><h2>List your power</h2><br />
+    <br /><h2 class="text-center">List your power</h2><br />
     <%# <p>Find me in app/views/powers/new.html.erb</p> %>
+      <div class="form"><%= image_tag "superpower.png" %></div>
 
       <%= simple_form_for(@power) do |f| %>
         <%# <%=  f.input :photos, as: :file, input_html: {multiple: false}   %>
-        <%# <div class="form"><%= image_tag "superpower.jpeg"</div>  %>
         <%= f.input :name %>
         <%= f.input :element, :collection => %w[Air Water Fire Electricity Earth] %>
         <%= f.input :description %>
@@ -14,7 +14,7 @@
         <%= f.input :price %>
         <%= f.input :location, :collection => ["Metropolis", 'Gotham City', 'Atlantis', 'Wakanda', 'Symkaria', 'Star City', 'London'] %>
         <%= f.input :example_hero %>
-        <%= f.submit "Let's Go!", class: "btn btn-primary" %>
+        <div class="col text-center"><%= f.submit "Let's Go!", class: "btn btn-primary" %></div>
       <% end %>
     </div>
   </div>
