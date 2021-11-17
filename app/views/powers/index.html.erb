@@ -2,10 +2,17 @@
   <h1>Superpower Rental</h1>
   <h3>- Become the Hero You Were Always Meant to Be<h3>
   <div class="power-search">
-  <%= simple_form_for :search do |f| %>
-    <%= f.submit "Search", class: "btn btn-danger" %>
-    <%=f.input_field :query, placeholder: 'Search for your power!', class: "search-form-input" %>
+  <div id="form-field"><%= form_tag powers_path, id: "my-form", method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        id: "form-field",
+        placeholder: "Search for your power!", class: "search-form-input"
+      %>
+    <%= submit_tag "Search", class: "btn btn-danger" %>
   <% end %>
+</div>
+
+ 
   </div>
 </div>
 
