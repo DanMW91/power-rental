@@ -12,10 +12,10 @@ class BookingsController < ApplicationController
     @booking.save
     redirect_to power_path(params[:power_id])
   end
-  
+
   def index
     @bookings = Booking.where(user_id: current_user.id)
-  end 
+  end
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :status)
