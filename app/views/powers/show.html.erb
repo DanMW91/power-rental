@@ -13,7 +13,8 @@
     <p><%= @power.price %></p>
     <p><%= @power.example_hero %></p>
   </div>
-<% if current_user != @power.user%>
+
+<% if current_user != @power.user && user_signed_in?%>
 
   <div class="book-form">
   <h3>Book this power!</h3>
