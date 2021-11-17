@@ -2,8 +2,10 @@
 <h2>Booking Requests:</h2>
 
   <div class="cards-container-my-powers">
+    <% if @active_bookings.empty? %>
+      <h2 class="no-requests">You have no requests!</h2>
+    <% end %>
       <% @active_bookings.each do |booking| %>
-
           <div class="card-product" >
             <img src="<%=booking.power.image_url%>" />
             <div class="card-product-infos">
@@ -35,8 +37,10 @@
 <h2>Your Active Power Listings:</h2>
   <div class="cards-container-my-powers">
     <% @powers.each do |power| %>
-      <%= link_to power_path(power), class: "card-link" do %>
+
         <div class="card-product" >
+
+
           <img src="<%=power.image_url%>" />
           <div class="card-product-infos">
             <h2><%= power.name %></h2>
@@ -47,9 +51,11 @@
               <%= link_to "edit", edit_power_path(power), class: "btn btn-danger" %>
               <%= link_to "delete", power_path(power), method: :delete, class: "btn btn-danger ml-2" %>
             </div>
+
           </div>
+
         </div>
-      <% end %>
+
     <% end %>
   </div>
 </div>
