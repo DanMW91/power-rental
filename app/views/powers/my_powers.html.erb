@@ -1,15 +1,48 @@
-<div class="container">
+<div class="container py-3">
+<h2>Booking Requests:</h2>
+
+  <div class="cards-container-my-powers">
+      <% @active_bookings.each do |booking| %>
+
+          <div class="card-product" >
+            <img src="<%=booking.power.image_url%>" />
+            <div class="card-product-infos">
+              <h2> <%= booking.user.first_name %> <%= booking.user.last_name %> wants to rent your <%= booking.power.name %> power!</h2>
+              <p><%= booking.power.description %></p>
+              <p ><%= booking.power.location%></p>
+              <p>Requested by: <%= booking.user.email  %>
+              <h3> <%= booking.status.capitalize %></h3>
+              <p class='m-3'><strong>Price: £<%= booking.power.price %>/day</strong></p>
+              <div class="d-flex justify-content-around">
+                <% if booking.status == 'pending' %>
+                  <%= simple_form_for booking do |f| %>
+                    <%= f.hidden_field :status, value: "accepted"  %>
+                    <%= f.submit 'Accept', class: 'btn btn-success' %>
+                  <% end %>
+                  <%= simple_form_for booking do |f| %>
+                    <%= f.hidden_field :status, value: "rejected"  %>
+                    <%= f.submit 'Reject', class: 'btn btn-danger' %>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+      <% end %>
+    </div>
+
+
 <h2>Your Active Power Listings:</h2>
-  <div class="cards-container col-sm-6">
+  <div class="cards-container-my-powers">
     <% @powers.each do |power| %>
       <%= link_to power_path(power), class: "card-link" do %>
         <div class="card-product" >
-          <img src="https://static.wikia.nocookie.net/marveldatabase/images/8/88/Fantastic_Four_Vol_6_1_Human_Torch_Variant_Textless.jpg" />
+          <img src="<%=power.image_url%>" />
           <div class="card-product-infos">
             <h2><%= power.name %></h2>
             <p><%= power.description %></p>
             <p ><%= power.location%></p>
-            <p class='m-3'><strong>- <%= power.price %></strong></p>
+            <p class='m-3'><strong>Price: £<%=power.price %>/day</strong></p>
             <div class="d-flex">
               <%= link_to "edit", edit_power_path(power), class: "btn btn-danger" %>
               <%= link_to "delete", power_path(power), method: :delete, class: "btn btn-danger ml-2" %>

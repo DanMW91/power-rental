@@ -4,6 +4,7 @@
     <br /><h2>List your power</h2><br />
     <%# <p>Find me in app/views/powers/new.html.erb</p> %>
 
+
       <%= simple_form_for(@power) do |f| %>
         <%# <%=  f.input :photos, as: :file, input_html: {multiple: false}   %>
         <%# <div class="form"><%= image_tag "superpower.jpeg"</div>  %>
@@ -14,8 +15,10 @@
         <%= f.input :price %>
         <%= f.input :location, :collection => ["Metropolis", 'Gotham City', 'Atlantis', 'Wakanda', 'Symkaria', 'Star City', 'London'] %>
         <%= f.input :example_hero %>
+        <%= f.input :image_url %>
         <%= f.submit "Let's Go!", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
 </div>
+
