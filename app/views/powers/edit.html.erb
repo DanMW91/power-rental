@@ -1,12 +1,18 @@
-<h1>Powers#edit</h1>
-<p>Find me in app/views/powers/edit.html.erb</p>
-<%= simple_form_for(@power) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :element, :collection => %w[Air Water Fire Electricity Earth] %>
-  <%= f.input :description %>
-  <%= f.input :power_type, :collection => %w[Mental Flight Strength Transformation Transportation Darkness Healing Sorcery Otherworldly] %>
-  <%= f.input :price %>
-  <%= f.input :location, :collection => ["Metropolis", 'Gotham City', 'Atlantis', 'Wakanda', 'Symkaria', 'Star City', 'London'] %>
-  <%= f.input :example_hero %>
-  <%= f.submit "Confirm!", class: "btn btn-danger" %>
-<% end %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+    <br /><h2>Change your power</h2><br />
+    <%# <p>Find me in app/views/powers/edit.html.erb</p> %>
+      <%= simple_form_for(@power) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :element, :collection => %w[Air Water Fire Electricity Earth] %>
+        <%= f.input :description %>
+        <%= f.input :power_type, :collection => %w[Mental Flight Strength Transformation Transportation Darkness Healing Sorcery Otherworldly] %>
+        <%= f.input :price %>
+        <%= f.input :location, :collection => ["Metropolis", 'Gotham City', 'Atlantis', 'Wakanda', 'Symkaria', 'Star City', 'London'] %>
+        <%= f.input :example_hero %>
+        <%= f.submit "Confirm!", class: "btn btn-danger" %>
+      <% end %>
+      </div>
+  </div>
+</div>
