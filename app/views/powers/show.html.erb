@@ -16,8 +16,9 @@
     <%= simple_form_for [@power, @booking] do |f| %>
       <%= f.input :start_date, as: :date, html5: true %>
       <%= f.input :end_date, as: :date, html5: true %>
-      <%= f.hidden_field :status, value: "pending"  %>
       <%= f.submit "Request Booking", class: "btn btn-primary" %>
     <% end %>
   </div>
 <% end %>
+
+<p> <%= @booking.status %> </p>
