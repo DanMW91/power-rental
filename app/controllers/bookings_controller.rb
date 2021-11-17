@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
     booking = Booking.find(params[:id])
     booking.status = params[:booking][:status]
     booking.save
-
+    redirect_to my_powers_path(current_user)
   end
 
   # def accept_booking

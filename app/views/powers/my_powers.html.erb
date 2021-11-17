@@ -10,7 +10,8 @@
               <h2><%= booking.power.name %></h2>
               <p><%= booking.power.description %></p>
               <p ><%= booking.power.location%></p>
-              <p> <%= booking.status %></p>
+              <p>Requested by: <%= booking.user.email  %>
+              <h3> <%= booking.status.capitalize %></h3>
               <p class='m-3'><strong>- <%= booking.power.price %></strong></p>
               <div class="d-flex justify-content-around">
                 <% if booking.status == 'pending' %>
