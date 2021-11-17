@@ -1,14 +1,17 @@
-<div class="main-banner" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= image_path "superheros.jpg"%>')">
-  <h1>Superpower Rental</h1>
-  <h3>- Become the Hero You Were Always Meant to Be<h3>
-  <div class="power-search">
-  <%= simple_form_for :search do |f| %>
-    <%= f.submit "Search", class: "btn btn-danger" %>
-    <%=f.input_field :query, placeholder: 'Search for your power!', class: "search-form-input" %>
-  <% end %>
+
+<div class="sticky-banner">
+  <div class="main-banner" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= image_path "superheros.jpg"%>')">
+    <h1>Superpower Rental</h1>
+    <h3>- Become the Hero You Were Always Meant to Be<h3>
+    <div class="power-search">
+    <%= simple_form_for :search do |f| %>
+      <%= f.submit "Search", class: "btn btn-danger" %>
+      <%=f.input_field :query, placeholder: 'Search for your power!', class: "search-form-input" %>
+    <% end %>
+    </div>
   </div>
 </div>
-
+<div class="container">
 
   <div class="cards-container">
       <% @powers.each do |power| %>
@@ -27,3 +30,4 @@
       <% end %>
 
   </div>
+</div>
