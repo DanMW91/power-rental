@@ -36,7 +36,7 @@ class PowersController < ApplicationController
   def destroy
     @power = Power.find(params[:id])
     @power.destroy
-    redirect_to mypowers_path
+    redirect_to my_powers_path
   end
 
   def edit
@@ -47,7 +47,7 @@ class PowersController < ApplicationController
     @power = Power.find(params[:id])
     @power.update(power_params)
     if @power.save!
-      redirect_to mypowers_path
+      redirect_to my_powers_path
     end
   end
 
