@@ -7,11 +7,11 @@
           <% power = booking.power %>
           <img src="<%=power.image_url%>" />
             <div class="card-product-info">
-            <h2 class="ml-4"><%= booking.status %></h2>
+            <h2 class="ml-4">Status: <%= booking.status %></h2>
             <p class="m-4 p-2"><%= power.name %></p>
-            <p class="m-4 p-2"><%= booking.start_date %></p>
-            <p class="m-4 p-2"><%= booking.end_date %></p>
-          <p class='m-3'><strong>- <%= power.price %></strong></p>
+            <p class="m-4 p-2">Start Date: <%= booking.start_date %></p>
+            <p class="m-4 p-2">End Date: <%= booking.end_date %></p>
+          <p class='m-3'><strong>Price - <%= power.price %></strong></p>
         </div>
       </div>
     <% end %>
