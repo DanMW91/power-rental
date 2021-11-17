@@ -7,7 +7,7 @@
           <div class="card-product" >
             <img src="https://static.wikia.nocookie.net/marveldatabase/images/8/88/Fantastic_Four_Vol_6_1_Human_Torch_Variant_Textless.jpg" />
             <div class="card-product-infos">
-              <h2><%= booking.power.name %></h2>
+              <h2> <%= booking.user.email %> want to rent your <%= booking.power.name %> power!</h2>
               <p><%= booking.power.description %></p>
               <p ><%= booking.power.location%></p>
               <p>Requested by: <%= booking.user.email  %>
