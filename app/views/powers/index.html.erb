@@ -1,17 +1,18 @@
-<div class="main-banner" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= image_path "superheros.jpg"%>')">
-  <h1>Superpower Rental</h1>
-  <h3>- Become the Hero You Were Always Meant to Be<h3>
-  <div class="power-search">
-  <div id="form-field"><%= form_tag powers_path, id: "my-form", method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        id: "form-field",
-        placeholder: "Search for your power!", class: "search-form-input"
-      %>
-    <%= submit_tag "Search", class: "btn btn-danger" %>
-  <% end %>
+<div class="sticky-banner">
+  <div class="main-banner" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= image_path "superheros.jpg"%>')">
+    <h1>Superpower Rental</h1>
+    <h3>- Become the Hero You Were Always Meant to Be<h3>
+    <div class="power-search">
+    <div id="form-field"><%= form_tag powers_path, id: "my-form", method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          id: "form-field",
+          placeholder: "Search for your power!", class: "search-form-input"
+        %>
+      <%= submit_tag "Search", class: "btn btn-danger" %>
+    <% end %>
+  </div>
 </div>
-
 
   </div>
 </div>

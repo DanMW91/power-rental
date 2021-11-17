@@ -15,9 +15,8 @@
 
 .sticky-banner {
   position: sticky;
-  z-index: 10;
-  top: 0px;
-
+  top: -400px;
+  z-index: 999;
 }
 
 .main-banner h1 {
