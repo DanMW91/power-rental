@@ -1,7 +1,18 @@
-<ul>
-<% @bookings.each do |booking| %>
-<li><%= booking.status %></li>
-<% power = Power.find(booking.power_id) %>
-<%= power.element %>
-<% end %>
-</ul>
+<div class="container">
+    <h1>My Bookings</h1>
+  <div class="d-flex-inline bookings">
+      <% @bookings.each do |booking| %>
+        <div class="card-product">
+          <img src="https://static.wikia.nocookie.net/marveldatabase/images/8/88/Fantastic_Four_Vol_6_1_Human_Torch_Variant_Textless.jpg" />
+            <div class="card-product-info">
+            <h2 class="ml-4"><%= booking.status %></h2>
+            <% power = booking.power %>
+            <p class="m-4 p-2"><%= power.name %></p>
+            <p class="m-4 p-2"><%= booking.start_date %></p>
+            <p class="m-4 p-2"><%= booking.end_date %></p>
+          <p class='m-3'><strong>- <%= power.price %></strong></p>
+        </div>
+      </div>    
+    <% end %>
+  </div>
+</div>
