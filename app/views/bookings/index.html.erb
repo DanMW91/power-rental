@@ -1,9 +1,12 @@
 
-<div class="container">
+<div class="container h-100">
 
-    <h1 class="py-2">My Bookings:</h1>
+  <h2 class="py-2">My Bookings:</h2>
 
-  <div class="bookings-title d-flex-inline bookings">
+  <div class="bookings-title d-flex justify-content-center bookings">
+    <% if @bookings.empty? %>
+      <h2 class="align-self-center">You have no bookings!<h2>
+    <% end %>
       <% @bookings.each do |booking| %>
         <div class="card-product">
           <% power = booking.power %>
