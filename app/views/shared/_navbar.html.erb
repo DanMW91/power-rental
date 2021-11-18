@@ -1,7 +1,11 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to root_path, class: "navbar-brand" do %>
+  <div class="navbar-header">
+    <%= link_to root_path, class: "navbar-brand" do %>
   <img src="https://cdn-icons-png.flaticon.com/512/1377/1377068.png">
   <% end  %>
+  <h5 class="navbar-text">Power Renterprise</h5>
+  </div>
+
    <div class="nav-power-search hidden">
       <div id="form-field">
         <%= form_tag powers_path, id: "my-form", method: :get do %>
