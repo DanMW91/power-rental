@@ -1,6 +1,7 @@
 class Power < ApplicationRecord
   belongs_to :user
   has_many :bookings
+  has_one_attached :photo
 
   validates :description, length: { maximum: 400 }
   validates :element, :power_type, :price, :location, :user_id, :name, :example_hero, presence: true
