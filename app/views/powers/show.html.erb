@@ -5,7 +5,7 @@
 
   <div class="power-info">
   <h1><%= @power.name %></h1>
-    <img class="show-image" src="<%=@power.image_url%>" />
+    <%= cl_image_tag @power.photo.key, height: 300, width: 400, crop: :fill %>
     <p><%= @power.description %></p>
     <p><%= @power.power_type %></p>
     <p><%= @power.element %></p>
