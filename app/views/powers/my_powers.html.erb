@@ -48,10 +48,7 @@
       <h2 class="no-requests">You have no powers listed!</h2>
     <% end %>
     <% @powers.each do |power| %>
-
         <div class="card-product" >
-
-
           <%= cl_image_tag power.photo.key %>
           <div class="card-product-infos">
             <h2><%= power.name %></h2>
