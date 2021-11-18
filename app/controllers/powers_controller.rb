@@ -67,7 +67,7 @@ class PowersController < ApplicationController
   private
 
   def power_params
-    params.require(:power).permit(:name, :element, :power_type, :description, :price, :location, :example_hero)
+    params.require(:power).permit(:photo, :name, :element, :power_type, :description, :price, :location, :example_hero)
   end
 
 end
