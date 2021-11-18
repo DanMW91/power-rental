@@ -6,7 +6,14 @@
       <h2 class="no-requests">You have no requests!</h2>
     <% end %>
       <% @active_bookings.each do |booking| %>
-          <div class="card-product" >
+      <% if booking.status == "accepted"  %>
+        <% @color = "green" %>
+      <% elsif booking.status == "rejected" %>
+            <% @color = "red" %>
+      <% else %>
+            <% @color = "" %>
+      <% end %>
+          <div class="card-product <%= @color %>" >
             <img src="<%=booking.power.image_url%>" />
             <div class="card-product-infos">
               <h2> <%= booking.user.first_name %> <%= booking.user.last_name %> wants to rent your <%= booking.power.name %> power!</h2>
@@ -25,12 +32,13 @@
                     <%= f.hidden_field :status, value: "rejected"  %>
                     <%= f.submit 'Reject', class: 'btn btn-danger' %>
                   <% end %>
+                <% elsif booking.status == "rejected" %>
+                <%= link_to "delete", booking_path(booking), method: :delete, class: 'btn btn-danger' %>
                 <% end %>
               </div>
             </div>
           </div>
-
-      <% end %>
+        <% end %>
     </div>
 
 
