@@ -44,6 +44,9 @@
 
 <h2>Your Active Power Listings:</h2>
   <div class="cards-container-my-powers">
+    <% if @powers.empty? %>
+      <h2 class="no-requests">You have no powers listed!</h2>
+    <% end %>
     <% @powers.each do |power| %>
 
         <div class="card-product" >
