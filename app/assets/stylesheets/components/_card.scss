@@ -23,6 +23,7 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.774);
   transition: all .2s ease-in-out;
+
   &:hover {
     transform: scale(1.1);
     cursor: pointer;
@@ -32,7 +33,7 @@
 
 .card-product {
   flex-shrink: 0;
-  position:relative;
+  position: relative;
   margin-top: 40px;
   margin: 20px;
   overflow: hidden;
@@ -43,6 +44,7 @@
   display: flex;
   align-items: center;
   transition: all .2s ease-in-out;
+
   &:hover {
     transform: scale(1.1);
     cursor: pointer;
@@ -74,7 +76,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height:100%;
+  height: 100%;
 }
 
 .card-product .card-del {
@@ -92,12 +94,14 @@
   border-radius: 50%;
 
 }
+
 .card-link {
   text-decoration: none;
   color: rgb(24, 24, 24);
-    &:hover {
-      color: rgb(24, 24, 24);
-    }
+
+  &:hover {
+    color: rgb(24, 24, 24);
+  }
 }
 
 .cards-container-my-powers {
@@ -111,4 +115,12 @@
 
   padding: 24px 0px;
   // justify-content: space-around;
+}
+
+.green {
+  background-color: rgb(125, 240, 31);
+}
+
+.red {
+  background-color: rgba(233, 82, 45, 0.87);
 }

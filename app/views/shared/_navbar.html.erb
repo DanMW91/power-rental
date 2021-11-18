@@ -1,7 +1,19 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%# <%= link_to "Home", root_path, class: "navbar-brand" %>
   <a class="navbar-brand" href="https://power-enterprise.herokuapp.com/"><img src="https://cdn-icons-png.flaticon.com/512/1377/1377068.png"></a>
+  <div class="nav-power-search hidden">
+      <div id="form-field">
+        <%= form_tag powers_path, id: "my-form", method: :get do %>
+        <%= submit_tag "Search", class: "btn btn-danger" %>
+          <%= text_field_tag :query,
+            params[:query],
+            id: "form-field",
+            placeholder: "Search for your power!", class: "nav-search-form-input"
+          %>
 
+        <% end %>
+      </div>
+    </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

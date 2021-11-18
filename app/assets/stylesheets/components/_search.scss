@@ -10,10 +10,10 @@ position: absolute;
 width: 600px;
 top: 280px;
 right: 300px;
- form {
-   display: flex;
- }
-
+  form {
+    display: flex;
+  }
+z-index: 5000;
 }
 .search-form-input {
   width: 400px;
