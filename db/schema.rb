@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2021_11_18_120629) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
     t.string "description"
-    t.text "keywords"
+    t.text "keywords", default: [], array: true
     t.string "image_url"
     t.index ["user_id"], name: "index_powers_on_user_id"
   end

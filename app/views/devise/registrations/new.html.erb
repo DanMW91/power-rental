@@ -6,7 +6,6 @@
       <%= f.error_notification %>
         <div class="form-inputs">
           <%= f.input :email,
-<<<<<<< HEAD
             required: true,
             autofocus: true,
             input_html: { autocomplete: "email" }%>
@@ -21,23 +20,6 @@
             <%= f.input :last_name  %>
             <%= f.input :location  %>
           </div>
-=======
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-          <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-          <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-          <%= f.input :first_name  %>
-          <%= f.input :last_name  %>
-          <%= f.input :location  %>
-          <%= f.input :photo, as: :file %>
-        </div>
->>>>>>> df26f2af08e23e0183a1dbc751342ef6cdf8691b
 
           <div class="form-actions d-flex justify-content-center">
             <%= f.button :submit, "Sign up", class: 'btn btn-primary btn-sm' %><br />
