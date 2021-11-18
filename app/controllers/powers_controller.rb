@@ -31,6 +31,7 @@ class PowersController < ApplicationController
   end
 
   def my_powers
+    @color = ""
     @powers = current_user.powers
     @active_bookings = []
     @powers.each do |power|
