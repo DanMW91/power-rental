@@ -14,7 +14,7 @@
             <% @color = "" %>
       <% end %>
           <div class="card-product <%= @color %>" >
-            <img src="<%=booking.power.image_url%>" />
+           <%= cl_image_tag booking.power.photo.key %>
             <div class="card-product-infos">
               <h2> <%= booking.user.first_name %> <%= booking.user.last_name %> wants to rent your <%= booking.power.name %> power!</h2>
               <p><%= booking.power.description %></p>
