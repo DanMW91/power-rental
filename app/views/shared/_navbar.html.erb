@@ -37,7 +37,7 @@
     </li>
         <% if user_signed_in? %>
       <li class="nav-item dropdown">
-        <%= image_tag "Doctor-Doom.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <%= link_to "Messages", "#", class: "dropdown-item" %>
           <%= link_to "My Powers", my_powers_path, class: "dropdown-item" %>
