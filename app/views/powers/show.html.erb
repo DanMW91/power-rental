@@ -17,11 +17,13 @@
 <% if current_user != @power.user && user_signed_in?%>
 
   <div class="book-form">
-  <h3>Book this power!</h3>
+  <br /><h3 class="text-center">Book this power!</h3><br />
     <%= simple_form_for [@power, @booking] do |f| %>
       <%= f.input :start_date, as: :date, html5: true %>
       <%= f.input :end_date, as: :date, html5: true %>
-      <%= f.submit "Request Booking", class: "btn btn-primary" %>
+      <div class="d-flex justify-content-center">
+        <%= f.submit "Request Booking", class: "btn btn-primary" %>
+      </div>
     <% end %>
   </div>
 <% end %>
