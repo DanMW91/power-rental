@@ -57,6 +57,13 @@
   object-fit: cover;
 }
 
+.card-product .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .card-product h2 {
   font-size: 16px;
   font-weight: bold;
