@@ -14,8 +14,6 @@ class PowersController < ApplicationController
   def create
     @power = Power.new(power_params)
     @power.user = current_user
-    keywords = []
-    keywords << @power.element
 
     if @power.save!
       redirect_to power_path(@power)
