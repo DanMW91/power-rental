@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   get '/my_powers', to: 'powers#my_powers'
   get '/my_bookings', to: 'bookings#index'
   get '/my_bookings/:id', to: 'bookings#show'
-  resources :bookings, only: [:index, :show, :update]
+  resources :bookings, only: [:index, :show, :update, :destroy]
 end

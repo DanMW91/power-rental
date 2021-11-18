@@ -31,6 +31,7 @@ class PowersController < ApplicationController
   end
 
   def my_powers
+    @color = ""
     @powers = current_user.powers
     @active_bookings = []
     @powers.each do |power|
@@ -67,7 +68,7 @@ class PowersController < ApplicationController
   private
 
   def power_params
-    params.require(:power).permit(:name, :element, :power_type, :description, :price, :location, :example_hero)
+    params.require(:power).permit(:photo, :name, :element, :power_type, :description, :price, :location, :example_hero)
   end
 
 end
