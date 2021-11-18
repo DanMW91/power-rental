@@ -52,7 +52,7 @@
         <div class="card-product" >
 
 
-          <img src="<%=power.image_url%>" />
+          <%= cl_image_tag power.photo.key %>
           <div class="card-product-infos">
             <h2><%= power.name %></h2>
             <p><%= power.description %></p>

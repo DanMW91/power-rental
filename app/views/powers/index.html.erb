@@ -24,12 +24,15 @@
       <% @powers.each do |power| %>
         <%= link_to power_path(power), class: "card-link" do %>
         <div class="card-product" >
-            <img src="<%=power.image_url%>" />
+            <%= cl_image_tag power.photo.key, width: 700, crop: :fill %>
             <div class="card-product-infos">
               <h2><%= power.name %></h2>
               <p><%= power.description %></p>
               <p ><%= power.location%></p>
               <p>Listed by - <%= power.user.first_name  %> <%= power.user.last_name  %> </p>
+              <% if power.user.photo.attached? %>
+               <%= cl_image_tag power.user.photo.key, width: 100, crop: :fill %>
+               <% end %>
               <p class='m-3'><strong>Price: £<%= power.price %>/day</strong></p>
             </div>
           </div>
