@@ -23,6 +23,12 @@ class BookingsController < ApplicationController
     redirect_to my_powers_path(current_user)
   end
 
+  def destroy
+    booking = Booking.find(params[:id])
+    booking.destroy!
+    redirect_to my_powers_path(current_user)
+  end
+
   # def accept_booking
   #   booking = Booking.find(:params[:booking_id])
   #   booking.status = "Accepted"
