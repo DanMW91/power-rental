@@ -2,9 +2,9 @@
 
 <div class="sticky-banner">
   <div class="main-banner" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= image_path "superheros.jpg"%>')">
-    <h1>Power Renterprise</h1>
-    <h3>- Become the Hero You Were Always Meant to Be<h3>
-    <div class="power-search">
+    <h1 data-aos="fade-right">Power Renterprise</h1>
+    <h3 data-aos="fade-right">- Become the Hero You Were Always Meant to Be<h3>
+    <div class="power-search" data-aos="fade-left">
       <div id="form-field">
         <%= form_tag powers_path, id: "my-form", method: :get do %>
           <%= text_field_tag :query,
@@ -18,22 +18,27 @@
     </div>
 </div>
 </div>
-<div class="container">
+<div class="container index-container">
 
   <div class="cards-container">
       <% @powers.each do |power| %>
         <%= link_to power_path(power), class: "card-link" do %>
-        <div class="card-product" >
-            <%= cl_image_tag power.photo.key, crop: :fill %>
-            <div class="card-product-infos">
-              <h2><%= power.name %></h2>
-              <p><%= power.description %></p>
-              <p ><%= power.location%></p>
-              <p>Listed by - <%= power.user.first_name  %> <%= power.user.last_name  %> </p>
-              <% if power.user.photo.attached? %>
-                <%= cl_image_tag power.user.photo.key, crop: :fill, class: 'avatar' %>
-              <% end %>
-              <p class='m-3'><strong>Price: £<%= power.price %>/day</strong></p>
+          <div data-aos="flip-left">
+            <div class="card-trip" >
+              <%= cl_image_tag power.photo.key, class: 'trip-img' %>
+              <div class="trip-detail">
+                <% if power.user.photo.attached? %>
+                  <%= cl_image_tag power.user.photo.key, class: 'avatar avatar-trip-card' %>
+                <% end %>
+                <div>
+                    <h2><%= power.name.capitalize %></h2>
+                    <p><%= power.description[0..30].gsub(/\s\w+\s*$/, '...') %></p>
+                    <p><i>Listed by - <%= power.user.first_name  %> <%= power.user.last_name  %> </i></p>
+                </div>
+                <div>
+                  <p class='m-3'><strong>Price: £<%= power.price %>/day</strong></p>
+                </div>
+              </div>
             </div>
           </div>
         <% end %>

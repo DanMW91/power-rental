@@ -1,4 +1,5 @@
 document.addEventListener('turbolinks:load', () => {
+  console.log('plz')
   if (document.querySelector('.main-banner')) {
     nav = document.querySelector('.navbar')
     search = document.querySelector('.nav-power-search');

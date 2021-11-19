@@ -13,13 +13,13 @@
       <% else %>
             <% @color = "" %>
       <% end %>
-          <div class="card-product <%= @color %>" >
-           <%= cl_image_tag booking.power.photo.key %>
+          <div class="card-product <%= @color %>" data-aos="flip-left"  >
+            <%= cl_image_tag booking.power.photo.key %>
             <div class="card-product-infos">
               <h2> <%= booking.user.first_name %> <%= booking.user.last_name %> wants to rent your <%= booking.power.name %> power!</h2>
               <p><%= booking.power.description %></p>
-              <p ><%= booking.power.location%></p>
-              <p>Requested by: <%= booking.user.email  %>
+              <p><%= booking.power.location%></p>
+              <p>Requested by: <%= booking.user.first_name  %> <%= booking.user.last_name  %>   <%= cl_image_tag booking.user.photo.key, class: 'avatar' %></p>
               <h3> <%= booking.status.capitalize %></h3>
               <p class='m-3'><strong>Price: £<%= booking.power.price %>/day</strong></p>
               <div class="d-flex justify-content-around">
