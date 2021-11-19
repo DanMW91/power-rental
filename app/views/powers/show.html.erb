@@ -18,20 +18,38 @@
         <!-- Goes to the second page -->
         <input type="radio" name="page" id="page-2"/>
         <label class="book__page book__page--2">
-          <div class="book__page-front">
+          <div class="book__page-front book-text">
             <div class="power-info">
-              <h1><%= @power.name %></h1>
-              <p><%= @power.description %></p>
-              <p><%= @power.power_type %></p>
-              <p><%= @power.element %></p>
-              <p><%= @power.location %></p>
-              <p><%= @power.price %></p>
-              <p><%= @power.example_hero %></p>
+              <div class="details-div power-title">
+                <h1 class="p-4 book-text m-auto"><%= @power.name.capitalize %></h1>
+              </div>
+              <div class="details-div">
+                <p class="p-3"><%= @power.description %></p>
+              </div>
+              <div class="details-div">
+                <p class="p-3">Power Type: <%= @power.power_type %></p>
+                <p class="p-3">Element: <%= @power.element %></p>
+              </div>
+              <div class="details-div">
+                <p class="p-3">Location: <%= @power.location %></p>
+
+                <p class="p-3">£<%= @power.price %> /day</p>
+              </div>
+              <div class="details-div">
+                Click for reviews ->
+              </div>
             </div>
           </div>
 
-          <div class="book__page-back">
-
+          <div class="book__page-back d-flex flex-column book-text w-100">
+            <div class="w-100 details-div">
+              <h2 class="border-bottom book-text">User Reviews:</h2>
+            </div>
+            <% @power.reviews.each do |review|  %>
+              <div class="w-100 details-div">
+                <p class="w-100 border-top border-bottom"><i>"<%= review.content%>"</i> - <%= review.user.first_name %> <%= cl_image_tag review.user.photo.key, class: 'avatar m-3' %> </p>
+              </div>
+            <% end %>
 
           </div>
         </label>
@@ -51,7 +69,7 @@
           <%= f.submit "Request Booking", class: "btn btn-success w-100" %>
         <% end %>
       </div>
-      <% else %>
+      <% elsif !user_signed_in? %>
     <div class='d-flex'>
         <%= link_to "Please log in to book power", new_user_registration_path(@power), class: "btn btn-danger book-login" %>
     </div>
