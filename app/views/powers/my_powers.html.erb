@@ -19,7 +19,7 @@
               <h2> <%= booking.user.first_name %> <%= booking.user.last_name %> wants to rent your <%= booking.power.name %> power!</h2>
               <p><%= booking.power.description %></p>
               <p >Location: <%= booking.power.location.capitalize%></p>
-              <p>Requested by: <%= booking.user.email  %>  <%= cl_image_tag booking.user.photo.key, class: 'avatar' %></p>
+              <p class="w-100"><strong>Requested by: <%= booking.user.first_name  %> </strong> <%= cl_image_tag booking.user.photo.key, class: 'avatar avatar-review-card ml-1' %></p>
               <h3> <%= booking.status.capitalize %></h3>
               <p class='m-3'><strong>Price: £<%= booking.power.price %>/day</strong></p>
               <div class="d-flex justify-content-around">
