@@ -4,13 +4,17 @@
 
 .book-form {
   width: 300px;
-  height: 400px;
+  /* height: 400px; */
   justify-self: flex-end;
   padding: 10px;
-  border: 1px solid grey;
+  border: 7px solid gold;
   box-shadow: 2px 2px 3px grey;
-  margin: 30px
-
+  margin: 30px;
+  margin-top: 100px;
+  color: black;
+  /* background: cornflowerblue; */
+  background-color: transparent;
+  background: border-box;
 }
 
 .power-info {
