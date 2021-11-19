@@ -1,5 +1,10 @@
 .bookings {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 80px;
+  // grid-gap: 80px;
+  overflow-x: scroll;
+}
+
+.bookings-title {
+  border-top: 1px solid grey;
 }

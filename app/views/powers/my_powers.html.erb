@@ -13,13 +13,13 @@
       <% else %>
             <% @color = "" %>
       <% end %>
-          <div class="card-product <%= @color %>" >
-            <img src="<%=booking.power.image_url%>" />
+          <div class="card-product <%= @color %>" data-aos="flip-left"  >
+            <%= cl_image_tag booking.power.photo.key %>
             <div class="card-product-infos">
               <h2> <%= booking.user.first_name %> <%= booking.user.last_name %> wants to rent your <%= booking.power.name %> power!</h2>
               <p><%= booking.power.description %></p>
-              <p ><%= booking.power.location%></p>
-              <p>Requested by: <%= booking.user.email  %>
+              <p >Location: <%= booking.power.location.capitalize%></p>
+              <p>Requested by: <%= booking.user.email  %>  <%= cl_image_tag booking.user.photo.key, class: 'avatar' %></p>
               <h3> <%= booking.status.capitalize %></h3>
               <p class='m-3'><strong>Price: £<%= booking.power.price %>/day</strong></p>
               <div class="d-flex justify-content-around">
@@ -51,9 +51,9 @@
         <div class="card-product" >
           <%= cl_image_tag power.photo.key %>
           <div class="card-product-infos">
-            <h2><%= power.name %></h2>
+            <h2><%= power.name.capitalize %></h2>
             <p><%= power.description %></p>
-            <p ><%= power.location%></p>
+            <p >Location: <%= power.location.capitalize%></p>
             <p class='m-3'><strong>Price: £<%=power.price %>/day</strong></p>
             <div class="d-flex">
               <%= link_to "edit", edit_power_path(power), class: "btn btn-danger" %>

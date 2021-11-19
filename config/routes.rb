@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'powers#index'
   resources :powers do
     resources :bookings, except: [:index, :show, :update, :edit]
+    resources :reviews, only: [:create]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 

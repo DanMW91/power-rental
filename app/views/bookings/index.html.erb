@@ -1,19 +1,56 @@
 
-<div class="container">
-    <h1>My Bookings</h1>
-  <div class="d-flex-inline bookings">
+<div class="container h-100">
+
+  <h2 class="py-2">My Bookings:</h2>
+
+  <div class="bookings-title d-flex justify-content-center bookings p-3">
+    <% if @bookings.empty? %>
+      <h2 class="align-self-center">You have no bookings!<h2>
+    <% end %>
       <% @bookings.each do |booking| %>
         <div class="card-product">
           <% power = booking.power %>
-          <img src="<%=power.image_url%>" />
+          <%= cl_image_tag booking.power.photo.key, height: 300, width: 400, crop: :fill %>
             <div class="card-product-info">
-            <h2 class="ml-4">Status: <%= booking.status %></h2>
+            <h2 class="ml-4">Status: <%= booking.status.capitalize %></h2>
             <p class="m-4 p-2"><%= power.name %></p>
             <p class="m-4 p-2">Start Date: <%= booking.start_date %></p>
             <p class="m-4 p-2">End Date: <%= booking.end_date %></p>
-          <p class='m-3'><strong>Price - <%= power.price %></strong></p>
+          <p class='m-3'><strong>Price: £<%= power.price %>/day</strong></p>
+          <% if !power.reviews.find_by(user: current_user) && booking.status == "accepted" %>
+            <button type="button" class="btn btn-primary booking-button ml-3" id="button-id-<%=power.id%>" data-toggle="modal" data-target="#exampleModal">
+              Leave a Review!
+            </button>
+          <% elsif power.reviews.find_by(user: current_user) %>
+            <p class="ml-3"> <%= cl_image_tag current_user.photo.key, class: 'avatar avatar-review-card' %> - <i> "<%=power.reviews.find_by(user: current_user).content %>"</i></p>
+          <% end %>
+          <%= simple_form_for([ power, @review], html: { class: "form-id-#{power.id} hidden pt-3" } ) do |f| %>
+          <%= f.input :content,  label: 'What did you think? :' %>
+
+          <div class="col text-center"><%= f.submit "Submit Review", class: "btn btn-primary" %></div>
+          <% end %>
+
         </div>
       </div>
     <% end %>
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade pt-4" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content p-4">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Leave a Review!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        <div id="render-form-modal-body">
+        </div>
+      </div>
+    </div>
   </div>
 </div>

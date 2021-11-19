@@ -1,27 +1,60 @@
-
-
 <div class="container d-flex justify-content-between">
 
+  <div class="internal">
+    <div class="cover">
+      <div class="book">
+        <label for="page-1"  class="book__page book__page--1">
+          <%= cl_image_tag @power.photo.key, class: 'book-image' %>
+        </label>
 
-  <div class="power-info">
-  <h1><%= @power.name %></h1>
-    <%= cl_image_tag @power.photo.key, height: 300, width: 400, crop: :fill %>
-    <p><%= @power.description %></p>
-    <p><%= @power.power_type %></p>
-    <p><%= @power.element %></p>
-    <p><%= @power.location %></p>
-    <p><%= @power.price %></p>
-    <p><%= @power.example_hero %></p>
+        <label for="page-2" class="book__page book__page--4">
+          <%= cl_image_tag @power.photo.key, class: 'book-image' %>
+        </label>
+
+
+        <!-- Resets the page -->
+        <input type="radio" name="page" id="page-1"/>
+
+        <!-- Goes to the second page -->
+        <input type="radio" name="page" id="page-2"/>
+        <label class="book__page book__page--2">
+          <div class="book__page-front">
+            <div class="power-info">
+              <h1><%= @power.name %></h1>
+              <p><%= @power.description %></p>
+              <p><%= @power.power_type %></p>
+              <p><%= @power.element %></p>
+              <p><%= @power.location %></p>
+              <p><%= @power.price %></p>
+              <p><%= @power.example_hero %></p>
+            </div>
+          </div>
+
+          <div class="book__page-back">
+
+
+          </div>
+        </label>
+      </div>
+    </div>
   </div>
 
-<% if current_user != @power.user && user_signed_in?%>
-
-  <div class="book-form">
-  <h3>Book this power!</h3>
-    <%= simple_form_for [@power, @booking] do |f| %>
-      <%= f.input :start_date, as: :date, html5: true %>
-      <%= f.input :end_date, as: :date, html5: true %>
-      <%= f.submit "Request Booking", class: "btn btn-primary" %>
+  <div>
+    <% if current_user != @power.user && user_signed_in?%>
+      <div class="book-form">
+        <h3>Book this power!</h3>
+        <%= simple_form_for [@power, @booking] do |f| %>
+          <%= f.input :start_date, as: :date, html5: true %>
+          <%= f.input :end_date, as: :date, html5: true %>
+          <p>Total: </p>
+          <p>To pay today: </p>
+          <%= f.submit "Request Booking", class: "btn btn-success w-100" %>
+        <% end %>
+      </div>
+      <% else %>
+    <div class='d-flex'>
+        <%= link_to "Please log in to book power", new_user_registration_path(@power), class: "btn btn-danger book-login" %>
+    </div>
     <% end %>
   </div>
-<% end %>
+</div>

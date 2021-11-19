@@ -1,15 +1,19 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to root_path, class: "navbar-brand" do %>
-  <img src="https://cdn-icons-png.flaticon.com/512/1377/1377068.png">
-  <% end  %>
-   <div class="nav-power-search hidden">
+  <div class="navbar-header">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <img src="https://cdn-icons-png.flaticon.com/512/1377/1377068.png">
+    <% end  %>
+    <h5 class="navbar-text">Power Renterprise</h5>
+  </div>
+
+  <div class="nav-power-search hidden">
       <div id="form-field">
         <%= form_tag powers_path, id: "my-form", method: :get do %>
         <%= submit_tag "Search", class: "btn btn-danger" %>
           <%= text_field_tag :query,
             params[:query],
             id: "form-field",
-            placeholder: "Search for your power!", class: "nav-search-form-input"
+            placeholder: "Search for your power!", class: "nav-search-form-input text-center"
           %>
 
         <% end %>
@@ -38,7 +42,11 @@
     </li>
         <% if user_signed_in? %>
       <li class="nav-item dropdown">
-        <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% if current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key, class: "avatar nav-avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% else %>
+        <%= image_tag "superheros.jpg", class: "avatar nav-avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% end %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <%= link_to "Messages", "#", class: "dropdown-item" %>
           <%= link_to "My Powers", my_powers_path, class: "dropdown-item" %>
