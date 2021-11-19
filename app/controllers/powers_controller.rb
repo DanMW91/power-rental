@@ -20,12 +20,6 @@ class PowersController < ApplicationController
     else
       render :new
     end
-    # @power = Power.new(power_params)
-    # if @power.save!
-    #   redirect_to power_path(@power)
-    # else
-    #   render :new
-    # end
   end
 
   def my_powers
@@ -37,7 +31,6 @@ class PowersController < ApplicationController
         @active_bookings << booking
       end
     end
-
   end
 
   def show
@@ -68,5 +61,4 @@ class PowersController < ApplicationController
   def power_params
     params.require(:power).permit(:photo, :name, :element, :power_type, :description, :price, :location, :example_hero)
   end
-
 end
