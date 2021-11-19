@@ -4,30 +4,13 @@
     <div class="cover">
       <div class="book">
         <label for="page-1"  class="book__page book__page--1">
-          <%= cl_image_tag @power.photo.key %>
+          <%= cl_image_tag @power.photo.key, class: 'book-image' %>
         </label>
 
         <label for="page-2" class="book__page book__page--4">
-          <div class="page__content">
-          <div>
-              <% if current_user != @power.user && user_signed_in?%>
-                <div class="book-form">
-                  <h3>Book this power!</h3>
-                  <%= simple_form_for [@power, @booking] do |f| %>
-                    <%= f.input :start_date, as: :date, html5: true %>
-                    <%= f.input :end_date, as: :date, html5: true %>
-                    <%= f.submit "Request Booking", class: "btn btn-primary" %>
-                  <% end %>
-                </div>
-                <% else %>
-              <div class='d-flex'>
-                  <%= link_to "Please log in to book power", new_user_registration_path(@power), class: "btn btn-danger book-login" %>
-            </div>
-              <% end %>
-            </div>
-            <div class="page__number">3</div>
-          </div>
+          <%= cl_image_tag @power.photo.key, class: 'book-image' %>
         </label>
+
 
         <!-- Resets the page -->
         <input type="radio" name="page" id="page-1"/>
@@ -56,4 +39,20 @@
     </div>
   </div>
 
+  <div>
+    <% if current_user != @power.user && user_signed_in?%>
+      <div class="book-form">
+        <h3>Book this power!</h3>
+        <%= simple_form_for [@power, @booking] do |f| %>
+          <%= f.input :start_date, as: :date, html5: true %>
+          <%= f.input :end_date, as: :date, html5: true %>
+          <%= f.submit "Request Booking", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+      <% else %>
+    <div class='d-flex'>
+        <%= link_to "Please log in to book power", new_user_registration_path(@power), class: "btn btn-danger book-login" %>
+    </div>
+    <% end %>
+  </div>
 </div>
