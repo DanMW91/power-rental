@@ -18,3 +18,11 @@ require("channels")
 
 import "controllers"
 import "bootstrap"
+import { reviewModalHandler } from './review_modal';
+
+
+
+document.addEventListener('turbolinks:load', () => {
+
+  reviewModalHandler();
+});

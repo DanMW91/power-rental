@@ -4,6 +4,9 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
+  def select_power
+  end
+
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
@@ -14,7 +17,7 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.where(user_id: current_user.id)
-    
+    @review = Review.new
   end
 
   def update
