@@ -3,7 +3,7 @@
   height: auto;
   flex-wrap: wrap;
   display: flex;
-  padding: 24px 0px;
+  padding: 24px 20px;
   justify-content: space-around;
   z-index: 9;
 }
@@ -34,8 +34,8 @@
 .card-product {
   flex-shrink: 0;
   position: relative;
-  margin-top: 40px;
-  margin: 20px;
+  margin-top: 20px;
+  margin: 40px;
   overflow: hidden;
   height: 350px;
   width: 400px;
@@ -53,7 +53,7 @@
 
 .card-product img {
   height: 100%;
-  width: 120px;
+  width: 0px;
   object-fit: cover;
 }
 
@@ -102,7 +102,7 @@
 
 }
 
-.card-link {
+.card-links {
   text-decoration: none;
   color: rgb(24, 24, 24);
 
