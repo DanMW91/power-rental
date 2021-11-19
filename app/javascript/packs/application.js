@@ -27,7 +27,7 @@ import { reviewModalHandler } from './review_modal';
 document.addEventListener('turbolinks:load', () => {
   const bookingButton = document.querySelector('.booking-button');
   bookingButton.addEventListener('click', (e)=> {
-    e.target.disabled = true;
+    // e.target.disabled = true;
     e.target.value = 'Request sent'  })
   reviewModalHandler();
 });
