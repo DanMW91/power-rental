@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,600|Tulpen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap');
 
 :root {
   /* colors */
-  --body-bg: #FAFAFA;
-  --page-bg: #F5F5F5;
+  --body-bg: #ffffff;
+  --page-bg: #fff9d7;
   --dark-text: #2A2935;
 
   /* spacing */
@@ -71,7 +72,7 @@ z-index: 12;
     &--1 {
       cursor: pointer;
       overflow: hidden;
-
+      border: 5px solid black;
       // div {
       //   min-height: 100%;
       //   width: 100%;
@@ -81,16 +82,20 @@ z-index: 12;
     }
 
     &--2 {
+      display: flex;
       position: absolute;
       right: 0;
       pointer-events: none;
       transform-style: preserve-3d;
       background-color: var(--page-bg);
       background-image: linear-gradient(90deg, rgba(227,227,227,1) 0%, rgba(247,247,247,0) 18%);
+      border: 5px solid white;
     }
 
     &--4 {
       cursor: pointer;
+      overflow: hidden;
+      border: 5px solid black;
     }
 
     &-front {
@@ -226,4 +231,14 @@ z-index: 12;
       transform: rotateY(-180deg);
     }
   }
+}
+
+.book-text {
+font-family: 'Zen Antique Soft', serif;
+text-align: center;
+}
+.power-title {
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
