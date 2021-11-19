@@ -34,6 +34,12 @@
 z-index: 12;
 }
 
+.book-image {
+  width: 100%;
+  height: calc(var(--baseline) * 42.6);
+  object-fit: cover;
+}
+
 .cover {
   width: calc(var(--baseline) * 60);
   height: calc(var(--baseline) * 42.6);
@@ -51,6 +57,7 @@ z-index: 12;
     width: 50%;
     height: 100%;
     display: grid;
+    align-content: center;
     transform: rotateY(0deg);
     transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
     transform-origin: 0% 0%;
@@ -65,11 +72,12 @@ z-index: 12;
       cursor: pointer;
       overflow: hidden;
 
-      img {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-      }
+      // div {
+      //   min-height: 100%;
+      //   width: 100%;
+      //   max-width: 100%;
+      //   overflow: hidden;
+      // }
     }
 
     &--2 {
@@ -83,7 +91,6 @@ z-index: 12;
 
     &--4 {
       cursor: pointer;
-      padding: 0 calc(var(--baseline) * 3);
     }
 
     &-front {
