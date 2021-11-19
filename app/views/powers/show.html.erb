@@ -46,7 +46,7 @@
         <%= simple_form_for [@power, @booking] do |f| %>
           <%= f.input :start_date, as: :date, html5: true %>
           <%= f.input :end_date, as: :date, html5: true %>
-          <%= f.submit "Request Booking", class: "btn btn-primary" %>
+          <%= f.submit "Request Booking", class: "btn btn-success w-100" %>
         <% end %>
       </div>
       <% else %>
