@@ -22,7 +22,7 @@
 
   <div class="cards-container">
       <% @powers.each do |power| %>
-        <%= link_to power_path(power), class: "card-link" do %>
+        <%= link_to power_path(power), class: "card-links" do %>
           <div data-aos="flip-left">
             <div class="card-trip" >
               <%= cl_image_tag power.photo.key, class: 'trip-img' %>
