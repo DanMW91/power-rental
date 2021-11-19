@@ -9,8 +9,6 @@ Booking.destroy_all
 Power.destroy_all
 User.destroy_all
 
-
-
 user1 = User.create(email: 'dan@gmail.com', password: '123123', first_name: 'Dan', last_name: 'Danson', location: 'france')
 image_url1 = 'https://static1.srcdn.com/wordpress/wp-content/uploads/2021/05/Wolverine-Blood-healing-factor-x-men-13.jpg'
 file1 = URI.open(image_url1)
@@ -20,6 +18,11 @@ user2 = User.create(email: 'test@test.com', password: 'test123', first_name: 'Je
 image_url = 'https://static.wikia.nocookie.net/marveldatabase/images/8/88/Fantastic_Four_Vol_6_1_Human_Torch_Variant_Textless.jpg'
 file = URI.open(image_url)
 user2.photo.attach(io: file, filename: "#{user2.first_name.gsub(" ", "-")}.jpeg", content_type: 'image/jpeg')
+
+user3 = User.create(email: 'fred@gmail.com', password: '123123', first_name: 'Freddie', last_name: 'Frederiks', location: 'england')
+image_url = 'https://www.comicbasics.com/wp-content/uploads/2020/01/The-Top-10-Superheroes-That-Wear-Red.jpg'
+file = URI.open(image_url)
+user3.photo.attach(io: file, filename: "#{user3.first_name.gsub(" ", "-")}.jpeg", content_type: 'image/jpeg')
 
 
 power = Power.create!(user_id: user1.id, element: "Fire", description: 'It burns!', power_type: 'Sorcery', price: 150, location: 'france', example_hero: 'human torch', name: 'pyromancer')
