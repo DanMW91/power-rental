@@ -5,6 +5,7 @@ class ReviewsController < ApplicationController
     review.power_id = params[:power_id]
     review.user = current_user
     review.save!
+    redirect_to bookings_path
   end
 
   def review_params

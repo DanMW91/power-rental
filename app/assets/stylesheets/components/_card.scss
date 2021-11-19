@@ -174,3 +174,12 @@
     cursor: pointer;
   }
 }
+.avatar-review-card {
+  border: 2px solid white;
+  box-shadow: 2px 2px 3px rgb(0, 0, 0,);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+
+}
