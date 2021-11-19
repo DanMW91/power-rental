@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,600|Tulpen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap');
 
 :root {
   /* colors */
-  --body-bg: #FAFAFA;
-  --page-bg: #F5F5F5;
+  --body-bg: #ffffff;
+  --page-bg: #fff9d7;
   --dark-text: #2A2935;
 
   /* spacing */
@@ -34,6 +35,12 @@
 z-index: 12;
 }
 
+.book-image {
+  width: 100%;
+  height: calc(var(--baseline) * 42.6);
+  object-fit: cover;
+}
+
 .cover {
   width: calc(var(--baseline) * 60);
   height: calc(var(--baseline) * 42.6);
@@ -51,6 +58,7 @@ z-index: 12;
     width: 50%;
     height: 100%;
     display: grid;
+    align-content: center;
     transform: rotateY(0deg);
     transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
     transform-origin: 0% 0%;
@@ -64,26 +72,30 @@ z-index: 12;
     &--1 {
       cursor: pointer;
       overflow: hidden;
-
-      img {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-      }
+      border: 5px solid black;
+      // div {
+      //   min-height: 100%;
+      //   width: 100%;
+      //   max-width: 100%;
+      //   overflow: hidden;
+      // }
     }
 
     &--2 {
+      display: flex;
       position: absolute;
       right: 0;
       pointer-events: none;
       transform-style: preserve-3d;
       background-color: var(--page-bg);
       background-image: linear-gradient(90deg, rgba(227,227,227,1) 0%, rgba(247,247,247,0) 18%);
+      border: 5px solid white;
     }
 
     &--4 {
       cursor: pointer;
-      padding: 0 calc(var(--baseline) * 3);
+      overflow: hidden;
+      border: 5px solid black;
     }
 
     &-front {
@@ -219,4 +231,14 @@ z-index: 12;
       transform: rotateY(-180deg);
     }
   }
+}
+
+.book-text {
+font-family: 'Zen Antique Soft', serif;
+text-align: center;
+}
+.power-title {
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }

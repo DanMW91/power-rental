@@ -4,30 +4,13 @@
     <div class="cover">
       <div class="book">
         <label for="page-1"  class="book__page book__page--1">
-          <%= cl_image_tag @power.photo.key %>
+          <%= cl_image_tag @power.photo.key, class: 'book-image' %>
         </label>
 
         <label for="page-2" class="book__page book__page--4">
-          <div class="page__content">
-          <div>
-              <% if current_user != @power.user && user_signed_in?%>
-                <div class="book-form">
-                  <h3>Book this power!</h3>
-                  <%= simple_form_for [@power, @booking] do |f| %>
-                    <%= f.input :start_date, as: :date, html5: true %>
-                    <%= f.input :end_date, as: :date, html5: true %>
-                    <%= f.submit "Request Booking", class: "btn btn-primary" %>
-                  <% end %>
-                </div>
-                <% else %>
-              <div class='d-flex'>
-                  <%= link_to "Please log in to book power", new_user_registration_path(@power), class: "btn btn-danger book-login" %>
-            </div>
-              <% end %>
-            </div>
-            <div class="page__number">3</div>
-          </div>
+          <%= cl_image_tag @power.photo.key, class: 'book-image' %>
         </label>
+
 
         <!-- Resets the page -->
         <input type="radio" name="page" id="page-1"/>
@@ -35,20 +18,38 @@
         <!-- Goes to the second page -->
         <input type="radio" name="page" id="page-2"/>
         <label class="book__page book__page--2">
-          <div class="book__page-front">
+          <div class="book__page-front book-text">
             <div class="power-info">
-              <h1><%= @power.name %></h1>
-              <p><%= @power.description %></p>
-              <p><%= @power.power_type %></p>
-              <p><%= @power.element %></p>
-              <p><%= @power.location %></p>
-              <p><%= @power.price %></p>
-              <p><%= @power.example_hero %></p>
+              <div class="details-div power-title">
+                <h1 class="p-4 book-text m-auto"><%= @power.name.capitalize %></h1>
+              </div>
+              <div class="details-div">
+                <p class="p-3"><%= @power.description %></p>
+              </div>
+              <div class="details-div">
+                <p class="p-3">Power Type: <%= @power.power_type %></p>
+                <p class="p-3">Element: <%= @power.element %></p>
+              </div>
+              <div class="details-div">
+                <p class="p-3">Location: <%= @power.location %></p>
+
+                <p class="p-3">£<%= @power.price %> /day</p>
+              </div>
+              <div class="details-div">
+                Click for reviews ->
+              </div>
             </div>
           </div>
 
-          <div class="book__page-back">
-
+          <div class="book__page-back d-flex flex-column book-text w-100">
+            <div class="w-100 details-div">
+              <h2 class="border-bottom book-text">User Reviews:</h2>
+            </div>
+            <% @power.reviews.each do |review|  %>
+              <div class="w-100 details-div">
+                <p class="w-100 border-top border-bottom"><i>"<%= review.content%>"</i> - <%= review.user.first_name %> <%= cl_image_tag review.user.photo.key, class: 'avatar m-3' %> </p>
+              </div>
+            <% end %>
 
           </div>
         </label>
@@ -56,4 +57,22 @@
     </div>
   </div>
 
+  <div>
+    <% if current_user != @power.user && user_signed_in?%>
+      <div class="book-form">
+        <h3>Book this power!</h3>
+        <%= simple_form_for [@power, @booking] do |f| %>
+          <%= f.input :start_date, as: :date, html5: true %>
+          <%= f.input :end_date, as: :date, html5: true %>
+          <p>Total: </p>
+          <p>To pay today: </p>
+          <%= f.submit "Request Booking", class: "btn btn-success w-100" %>
+        <% end %>
+      </div>
+      <% elsif !user_signed_in? %>
+    <div class='d-flex'>
+        <%= link_to "Please log in to book power", new_user_registration_path(@power), class: "btn btn-danger book-login" %>
+    </div>
+    <% end %>
+  </div>
 </div>
